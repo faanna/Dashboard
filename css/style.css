@@ -72,12 +72,12 @@ body {
   margin-bottom: 40px;
   background: none;
 }
-.navigation ul li:hover:not(:first-child) {
+.navigation ul li:hover:not(:first-child) a {
   color: #365fa1;
 }
 .navigation ul li a {
   position: relative;
-  display: block;
+  display: flex;
   width: 100%;
   color: #fff;
 }
@@ -91,6 +91,78 @@ body {
 }
 .navigation ul li a .icon i {
   font-size: 22px;
+}
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+.navigation #btnCall {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+.navigation #btnCall span {
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: #000;
+  text-indent: -9999px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -30%;
+  transition: all 0.5s;
+}
+.navigation #btnCall::before {
+  content: "";
+  width: 60%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -30%;
+  transition: all 0.5s;
+}
+.navigation #btnCall::after {
+  content: "";
+  width: 60%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -30%;
+  transition: all 0.5s;
+}
+.navigation.on {
+  width: 300px;
+  border-radius: 20px;
+  inset: 20px 20px 20px 83vw;
+}
+.navigation.on #btnCall span {
+  opacity: 0;
+  transform: translate(100%);
+}
+.navigation.on #btnCall::before {
+  transform: rotate(45deg);
+  top: calc(50% - 1px);
+}
+.navigation.on #btnCall::after {
+  transform: rotate(-45deg);
+  bottom: calc(50% - 1px);
 }
 
 /*# sourceMappingURL=style.css.map */
